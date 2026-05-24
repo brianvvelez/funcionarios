@@ -96,7 +96,7 @@ GestionInventarios.Api/
 
 ### 4.2 Configuración
 
-Edita `appsettings.json` y ajusta lo siguiente:
+Edita `appsettings.json` :
 
 ```jsonc
 {
@@ -104,15 +104,15 @@ Edita `appsettings.json` y ajusta lo siguiente:
     "Default": "Server=localhost;Database=GestionInventarios;Integrated Security=True;TrustServerCertificate=True;"
   },
   "Jwt": {
-    "Key": "CAMBIAR-ESTA-CLAVE-POR-UNA-DE-AL-MENOS-32-CARACTERES-EN-PRODUCCION",
+    "Key": "CAMBIAR",
     "Issuer": "GestionInventarios.Api",
     "Audience": "GestionInventarios.Clients",
     "ExpirationMinutes": 60
   },
   "Seed": {
-    "AdminEmail": "admin@empresa.com",
+    "AdminEmail": "admin@test.com",
     "AdminPassword": "Admin123*",
-    "DocenteEmail": "docente@empresa.com",
+    "DocenteEmail": "docente@test.com",
     "DocentePassword": "Docente123*"
   }
 }
@@ -147,8 +147,8 @@ Se crean en el primer arranque:
 
 | Rol            | Email                  | Contraseña    |
 |----------------|------------------------|---------------|
-| Administrador  | `admin@empresa.com`    | `Admin123*`   |
-| Docente        | `docente@empresa.com`  | `Docente123*` |
+| Administrador  | `admin@test.com`    | `Admin123*`   |
+| Docente        | `docente@test.com`  | `Docente123*` |
 
 ---
 
@@ -193,7 +193,7 @@ Respuesta:
 ```json
 {
   "token": "eyJhbGciOi...",
-  "email": "admin@empresa.com",
+  "email": "admin@test.com",
   "rol": "Administrador",
   "expiraEn": "2026-05-24T18:30:00Z"
 }
@@ -214,7 +214,7 @@ curl -X POST http://localhost:5080/api/usuarios \
   -d '{
         "nombres":   "María",
         "apellidos": "Gómez",
-        "email":     "maria.gomez@empresa.com",
+        "email":     "maria.gomez@test.com",
         "password":  "Maria123*",
         "rol":       "Docente"
       }'
